@@ -4,22 +4,22 @@ import os
 class some_class:
     def input(self,a="I"):
         if a=="I":
-            self.name=raw_input('Enter Name (char_limit=20): ')
-            self.crime=raw_input('Enter Crime (char_limit=15): ')
-            self.date=raw_input('enter date of birth [DD/MM/YYYY]: ')
+            self.name=input('Enter Name (char_limit=20): ')
+            self.crime=input('Enter Crime (char_limit=15): ')
+            self.date=input('enter date of birth [DD/MM/YYYY]: ')
             while datevali(self.date)==False:
-                self.date=raw_input('enter date of birth [DD/MM/YYYY]: ')
-            self.sent=raw_input("Enter Time Remaining in Jail: ")
+                self.date=input('enter date of birth [DD/MM/YYYY]: ')
+            self.sent=input("Enter Time Remaining in Jail: ")
             l=str(load(open("ref.dat","rb")))
             self.refno="PRIS"+"0"*(4-len(l))+l
             dump(int(l)+1,open("ref.dat","wb"))
         elif a=="E":
-            self.name=raw_input('Enter Name (char_limit=20): ')
-            self.crime=raw_input('Enter Crime (char_limit=15): ')
-            self.date=raw_input('enter date of birth [DD/MM/YYYY]: ')
+            self.name=input('Enter Name (char_limit=20): ')
+            self.crime=input('Enter Crime (char_limit=15): ')
+            self.date=input('enter date of birth [DD/MM/YYYY]: ')
             while datevali(self.date)==False:
-                self.date=raw_input('enter date of birth [DD/MM/YYYY]: ')
-            self.sent=raw_input("Enter Time Remaining in Jail: ")
+                self.date=input('enter date of birth [DD/MM/YYYY]: ')
+            self.sent=input("Enter Time Remaining in Jail: ")
     def disp(self):
         print ("   |",self.refno,"|\t",self.name+" "*(20-len(self.name)),"|\t",self.crime+" "*(15-len(self.crime)),"\t|",self.sent+ ' '*(10-len(self.sent))+'\t|',self.date," "*(10-len(self.date))+'|',sep=" ")
 
@@ -66,7 +66,7 @@ def create(a="wb"):
         o1.input()
         dump(o1,f)
         
-        prompt=raw_input('New Entry? (Y/N) :')
+        prompt=input('New Entry? (Y/N) :')
         if prompt.lower()=='n':break
     f.close()
 
@@ -100,20 +100,20 @@ Please recheck the root directory""")
         f=open("data.dat","rb")
         o1=some_class()
         k=0
-        ask=raw_input("""search by?
+        ask=input("""search by?
 1) Reference no.
 2) Name
 3) Crime
 4) Year of Birth
 """)
         if ask=="1":
-            st=raw_input("Enter Reference No.: ")
+            st=input("Enter Reference No.: ")
         elif ask=="2":
-            st=raw_input("Enter Name: ")
+            st=input("Enter Name: ")
         elif ask=="3":
-            st=raw_input("Enter Crime: ")
+            st=input("Enter Crime: ")
         elif ask=="4":
-            st=raw_input("Enter Year Of Birth: ")
+            st=input("Enter Year Of Birth: ")
         try:
             formatter()
             while True:
@@ -153,7 +153,7 @@ Please recheck the root directory""")
         t=open("temp.dat","wb")
         o1=some_class()
         k=0
-        st=raw_input("Enter Reference no.: ")
+        st=input("Enter Reference no.: ")
         try:
             while True:
                 o1=load(f)
@@ -182,7 +182,7 @@ Please recheck the root directory""")
         t=open("temp.dat","wb")
         o1=some_class()
         k=0
-        st=raw_input("Enter Reference no.: ")
+        st=input("Enter Reference no.: ")
         try:
             while True:
                 o1=load(f)
