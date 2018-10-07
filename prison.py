@@ -1,7 +1,8 @@
 from pickle import *
 import os
 
-class some_class:
+#Python -- 3 program
+class some_class():
     def input(self,a="I"):
         if a=="I":
             self.name=input('Enter Name (char_limit=20): ')
